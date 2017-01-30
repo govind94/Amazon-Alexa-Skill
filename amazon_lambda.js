@@ -46,7 +46,7 @@ exports.handler = (event, context) => {
             break;
 
           case "GetVideoViewCount":
-            var endpoint = "https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername=GoogleDevelopers&key=AIzaSyCyf5IhFzcn9iutvvDcmIt0TIhUAUH6-qQ"
+            var endpoint = "https://www.googleapis.com/youtube/v3/videos?part=statistics&id=-1yfWb0-jqQ&key=AIzaSyCyf5IhFzcn9iutvvDcmIt0TIhUAUH6-qQ"
             var body = ""
             https.get(endpoint, (response) => {
               response.on('data', (chunk) => { body += chunk })
@@ -65,7 +65,7 @@ exports.handler = (event, context) => {
 
           case "GetVideoViewCountSinceDate":
             console.log(event.request.intent.slots.SinceDate.value)
-            var endpoint = "https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername=GoogleDevelopers&key=AIzaSyCyf5IhFzcn9iutvvDcmIt0TIhUAUH6-qQ"
+            var endpoint = "https://www.googleapis.com/youtube/v3/videos?part=statistics&id=-1yfWb0-jqQ&key=AIzaSyCyf5IhFzcn9iutvvDcmIt0TIhUAUH6-qQ"
             var body = ""
             https.get(endpoint, (response) => {
               response.on('data', (chunk) => { body += chunk })
